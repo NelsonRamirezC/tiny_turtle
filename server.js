@@ -1,10 +1,14 @@
 import express from 'express';
-import { getUsers } from './controllers/users.controller.js';
+import routersUsers from './routes/usuarios.routes.js'
 const app = express();
 
 app.listen(3000, () => console.log("http://localhost:3000"))
 
+//MIDDLEWARE
 
-app.get("/api/productos", getUsers, async (req, res) => {
+app.use(routersUsers)
 
-})
+//RUTAS API PRODUCTOS
+/* app.get("/api/productos", getUsers, async (req, res) => {
+
+}) */
